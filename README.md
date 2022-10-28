@@ -29,7 +29,7 @@ POST: ceate/Add a new book
 GET: GEt a book by id
 POST : Update a book by id
 
-## /books/issued 
+## /books/issued/books
 GET: GEt all the issued books
 
 ## /Book/issued/withFine
