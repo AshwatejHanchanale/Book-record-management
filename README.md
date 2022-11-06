@@ -1,53 +1,40 @@
-# Book-record-management
+##This is a book record management API Backend for the management of records and books
 
-this is a book record management API Backend for the management of records and books
+#API Documentation link
+https://documenter.getpostman.com/view/11423344/VUqyoZdU
 
+#Routes and Endpoints
+/users
+POST: Create a new user ✅ GET: Get all list of users ✅
 
-#routes and Endpoints
+/users/{id}
+GET: Get a user by id ✅ PUT: Update a user by id ✅ DELETE: Delete a user by id (check if he/she still has an issued book) (is there any fine to be paid) ✅
 
-## /users
-post: create a new user ✔
-get: get all list of users ✔
+/users/subscription-details/{id}
+GET: Get user subscription details ✅
 
-## /users/{id}
-GET: get a user by id  ✔
-PUT: update a user by id
-DELETE: delete a user by id (check if he/she still has an issued book)(IS there any fine to be paid).
+Date of subscription
+Valid till
+Fine if any
+/books
+GET: Get all books ✅ POST: Create/Add a new book ✅
 
+/books/{id}
+GET: Get a book by id ✅ PUT: Update a book by id ✅
 
-##/users/subscription-details/{id}
-GET: Get user subscription details
-1.Date of subscription
-2. valid till 
-3. fine if any
+/books/issued/by-user
+GET: Get all issued books✅
 
-## /books
-GET: get all books
-POST: ceate/Add a new book
+/books/issued/withFine
+// TODO TASK // 🏁 GET: Get all issued books with fine
 
-## /books{id}
-GET: GEt a book by id
-POST : Update a book by id
+#Subscription Types
+Basic (3 months) Standard (6 months) Premium (12 months)
 
-## /books/issued/books
-GET: GEt all the issued books
+NOTE: dates will be in format mm/dd/yyyy
 
-## /Book/issued/withFine
-GEt: Get all issued books with fine
+If the subscription date is 01/08/22 and Subscription type is Standard the valid till date will be 01/02/23
 
-##Subscription types
-Basic (3 months)
-Stadard(6 months)
-premium(12 months)
+If he has an issued book and the issued book is to be returned at 01/01/23 If he missed the date of return, then he gts a fine of Rs. 100./
 
-
-if the subscribtion date is 01/10/2022
-and subscription type is standard
-the valid till date will be 01/04/2023
-
-If he has an issued book  and the issued book s to be returned at 01/01/2023
-and he misses it, then he gets a fine of 100rs
-
-
-if has an issued book and the issued book is to be returned at 01/01/2023
-if he missed the date of return 
+If he has an issued book and the issued book is to be returned at 01/01/23 If he missed the date of return, and his subscription also expires, then he will get a fine of Rs 200./
